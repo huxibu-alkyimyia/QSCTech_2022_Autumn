@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>join</title>
+    <style>
+        body{
+            background-color:#a1a1a1;
+        }
+        #container {
+            background-color:gainsboro;
+            position:fixed;
+            top:150px;
+            left:450px;
+            right:450px;
+            height:160px;
+        }
+        #container {
+            background-color:gainsboro;
+            position:fixed;
+            top:400px;
+            left:450px;
+            right:450px;
+            height:350px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;font-family:'Times New Roman'">Cyber Prisoner</h1>
+    <form action="/log" method="post" novalildate autocapitalize="off">
+        <div id="container">
+            <div>
+                <label for="choice">your choice:</label>
+                <input name="choice" type="text" id="choice">
+            </div>
+            <div>
+                <input type="submit" value="submit">
+            </div>
+        </div>
+        <div id="container2">
+            <p style="text-align:center;font-family:Arial;font-size:large">
+                mode: {{ .mode }}<br>
+                round: {{ .round }}<br>
+                your_result: {{ .yresult }}<br>
+                opp_result: {{ .oresult }}
+            </p>
+        </div>
+    </form>
+</body>
