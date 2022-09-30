@@ -15,18 +15,18 @@ let data = [
     title: "想不出答案了随便写一个",
     content: "想不出问题了随便写一个",
   },
-];
+]; //问题和答案
 let divs = ["div1", "div2", "div3", "div4"];
 let ids = ["q1", "q2", "q3", "q4"];
 for (let i = 0; i < 4; ++i)
-  document.getElementById(ids[i]).innerHTML = data[i].title;
+  document.getElementById(ids[i]).innerHTML = data[i].title; //写入问题
 let showAnswer = [false, false, false, false];
 let everClicked = [false, false, false, false];
 
-function Change(num) {
+function Change(num) { //点击问题时
   greyed = everClicked[num];
   expanded = showAnswer[num];
-  if (expanded == false) {
+  if (expanded == false) { //答案未展示时展示答案
     Recover(num);
     let divToShow = document.getElementById(divs[num]);
     let txtToShow = document.getElementById(ids[num]);
@@ -42,7 +42,7 @@ function Change(num) {
       data[num].content;
     everClicked[num] = true;
     showAnswer[num] = true;
-  } else {
+  } else { //答案已展示时收起答案
     showAnswer[num] = false;
     let divToHide = document.getElementById(divs[num]);
     let txtToHide = document.getElementById(ids[num]);
@@ -52,7 +52,7 @@ function Change(num) {
   }
 }
 
-function Recover(num) {
+function Recover(num) { //保证仅有一个问题的答案被展示
   for (i = 0; i < 4; ++i) {
     if (i == num) continue;
     if (showAnswer[i] == false) continue;
